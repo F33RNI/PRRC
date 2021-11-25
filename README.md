@@ -34,6 +34,8 @@ Some specs:
 
 <p align="center">
     <img src="SCREENSHOT.png" >
+    <br >
+    <img src="STRUCTURE.png" >
 </p>
 
 Comparing two numbers in Minecraft using PRRC (YouTube):
