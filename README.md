@@ -10,7 +10,7 @@
         <img src="https://badges.frapsoft.com/os/v1/open-source.png?v=103" >
         <a href="https://github.com/XxOinvizioNxX/PRRC/blob/main/LICENSE"><img src="https://img.shields.io/github/license/XxOinvizioNxX/PRRC" ></a>
         <a href="https://github.com/XxOinvizioNxX/PRRC/stargazers"><img src="https://img.shields.io/github/stars/XxOinvizioNxX/PRRC" ></a>
-        <a href="https://github.com/XxOinvizioNxX/Liberty-Way/PRRC"><img src="https://img.shields.io/badge/download_map-1.12.2-informational?logo=Github&color=purple" ></a>
+        <a href="https://github.com/XxOinvizioNxX/PRRC/releases"><img src="https://img.shields.io/badge/download_map-1.12.2-informational?logo=Github&color=purple" ></a>
     </p>
 </div>
 
