@@ -36,6 +36,10 @@ Some specs:
     <img src="SCREENSHOT.png" >
 </p>
 
+Comparing two numbers in Minecraft using PRRC (YouTube):
+
+[![Comparing two numbers in Minecraft using PRRC](https://img.youtube.com/vi/6nqyTfuWk78/0.jpg)](https://www.youtube.com/watch?v=6nqyTfuWk78)
+
 ----------
 
 ## Program flasher
