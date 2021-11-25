@@ -23,7 +23,7 @@
 
 ## What is it?
 
-PRRC is Programmable Rainbow Redstone Computer. This is an 8-bit computer built in Minecraft that can be programmed in assembler. The program can be flashed using a Python script that places torches in accordance with the specified bits
+PRRC is Programmable Rainbow Redstone Computer. This is my first 8-bit computer built in Minecraft that can be programmed in assembler. The program can be flashed using a Python script that places torches in accordance with the specified bits
 
 Some specs:
 - **Clock frequency:** 0.2Hz
