@@ -7,8 +7,7 @@
 <div style="width:100%;text-align:center;">
     <p align="center">
         <a href="https://twitter.com/fern_hertz"><img alt="Twitter" src="https://img.shields.io/twitter/url?label=My%20twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Ffern_hertz" ></a>
-        <img src="https://badges.frapsoft.com/os/v1/open-source.png?v=103" >
-        <a href="https://github.com/XxOinvizioNxX/PRRC/blob/main/LICENSE"><img src="https://img.shields.io/github/license/XxOinvizioNxX/PRRC" ></a>
+        <a href="https://youtu.be/6nqyTfuWk78"><img src="https://img.shields.io/badge/YouTube-PRRC%20Intro-red" ></a>
         <a href="https://github.com/XxOinvizioNxX/PRRC/stargazers"><img src="https://img.shields.io/github/stars/XxOinvizioNxX/PRRC" ></a>
         <a href="https://github.com/XxOinvizioNxX/PRRC/releases"><img src="https://img.shields.io/badge/download_map-1.12.2-informational?logo=Github&color=purple" ></a>
     </p>
