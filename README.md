@@ -101,4 +101,45 @@ The current version of PRRC uses 0.2 Hz redtone clock. You can slow it down with
 
 ## Program flasher
 
-coming soon...
+You can program PRRC directly in Minecraft by manually setting bits in program memory using redstone torches. This is similar to the very ancient memory of the first real computers.
+
+But to simplify programming, I wrote a Python script in which you can write instructions in assembler and get a commands for command blocks that will put the torches in the right positions for you.
+
+The `Uploader.py` script does not use any third party libraries. **And it can be run using the online Python compiler such as programiz, onlinegdb or any other python compiler.** Just copy the code from GitHub into the IDE, write your code according to the example, and run the file. As a result, you will receive a program memory map of bits, as well as commands for 4 command blocks. These commands must be pasted into the corresponding command blocks on the spawn and press the `WRITE PROGRAM` button. After pressing the button, clearing the memory and recording the program will start automatically. You do not need to run each part of the bootloader separately, after the end of the first write sequence, the next command block will be automatically launched
+
+### Example 1. Comparing two numbers
+
+```
+'MOV 2 31',     # 0 - Copy digital input register 31 (2nd number) to the register 2
+'NOR 2 2',      # 1 - Invert value in register 2 (invert 2nd number)
+'ADD 2 16',     # 2 - Add 1st number (digital input register 16) to the register 2
+'BRC 5',        # 3 - Goto 5 if carry is set (1st number > 2nd number)
+'JMP 7',        # 4 - Goto 7 (skip 5, 6) if no carry (1st number <= 2nd number)
+'PUT 31 1',     # 5 - Light up first lamp on digital output (register 31) (1st number > 2nd number)
+'JMP 14',       # 6 - Goto 14 to finish the program
+'PUT 3 1',      # 7 - Write 1 to register 3 (for next addition)
+'ADD 2 3',      # 8 - Add 1 to previous result (if a carry appears, the numbers are equal)
+'BRC 11',       # 9 - Goto 11 if carry is set (1st number == 2nd number)
+'JMP 13',       # 10 - Goto 13 (skip 11, 12) if no carry (1st number < 2nd number)
+'PUT 31 3',     # 11 - Light up both lamps on digital output (register 31) (1st number = 2nd number)
+'JMP 14',       # 12 - Goto 14 to finish the program
+'PUT 31 2',     # 13 - Light up second lamp on digital output (register 31) (1st number < 2nd number)
+'JMP 14'        # 14 - Goto 14 to make infinite loop
+```
+
+### Example 2. Integer division between 8-bit numbers (register 16 divide by 31)
+
+```
+'PUT 2 1',      # 0 - 1 (0b00000001) constant
+'MOV 3 16',     # 1 - Copy 1st number (from digital input register 16)
+'MOV 4 31',     # 2 - Copy 2nd number (from digital input register 31)
+'NOR 4 4',      # 3 - Invert value in register 4 (invert 2nd number to make subtraction for loop)
+'ADD 5 2',      # 4 - Increment answer by 1
+'ADD 3 4',      # 5 - Subtract 2nd number from previous result
+'BRC 8',        # 6 - Continue loop if no carry
+'JMP 10',       # 7 - Exit from loop and write the answer
+'ADD 3 2',      # 8 - Add 1 (from register 2) to complete subtraction
+'JMP 4',        # 9 - Another loop entry
+'MOV 16 5',     # 10 - Copy answer to the digital output (register 16)
+'JMP 11'        # 11 - Goto 11 to make infinite loop
+```
