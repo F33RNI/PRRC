@@ -7,7 +7,8 @@
 <div style="width:100%;text-align:center;">
     <p align="center">
         <a href="https://twitter.com/fern_hertz"><img alt="Twitter" src="https://img.shields.io/twitter/url?label=My%20twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Ffern_hertz" ></a>
-        <a href="https://youtu.be/6nqyTfuWk78"><img src="https://img.shields.io/badge/YouTube-PRRC%20Intro-red" ></a>
+        <a href="https://youtu.be/6nqyTfuWk78"><img src="https://img.shields.io/badge/YouTube-Comparing%20numbers-red" ></a>
+        <a href="https://youtu.be/-WHM7oyI7bc"><img src="https://img.shields.io/badge/YouTube-Ticker-red" ></a>
         <a href="https://github.com/XxOinvizioNxX/PRRC/stargazers"><img src="https://img.shields.io/github/stars/XxOinvizioNxX/PRRC" ></a>
         <a href="https://github.com/XxOinvizioNxX/PRRC/releases"><img src="https://img.shields.io/badge/download_map-1.12.2-informational?logo=Github&color=purple" ></a>
     </p>
@@ -26,6 +27,9 @@
   - [Reset](#reset)
   - [Clock](#clock)
 - [Program flasher](#program-flasher)
+  - [Example 1 (with YouTube demo)](#example-1-comparing-two-numbers)
+  - [Example 2](#example-2-integer-division-between-8-bit-numbers-register-16-divide-by-31)
+  - [Example 3 (with YouTube demo)](#example-3-ticker)
 
 ----------
 
@@ -45,10 +49,6 @@ Some specs:
     <br >
     <img src="STRUCTURE.png" >
 </p>
-
-Comparing two numbers in Minecraft using PRRC (YouTube):
-
-[![Comparing two numbers in Minecraft using PRRC](https://img.youtube.com/vi/6nqyTfuWk78/0.jpg)](https://www.youtube.com/watch?v=6nqyTfuWk78)
 
 ----------
 
@@ -135,6 +135,10 @@ The `Uploader.py` script does not use any third party libraries. **And it can be
 'JMP 14'        # 14 - Goto 14 to make infinite loop
 ```
 
+Demo on YouTube:
+
+[![Comparing two numbers in Minecraft using PRRC](https://img.youtube.com/vi/6nqyTfuWk78/0.jpg)](https://www.youtube.com/watch?v=6nqyTfuWk78)
+
 ### Example 2. Integer division between 8-bit numbers (register 16 divide by 31)
 
 ```
@@ -151,3 +155,18 @@ The `Uploader.py` script does not use any third party libraries. **And it can be
 'MOV 16 5',     # 10 - Copy answer to the digital output (register 16)
 'JMP 11'        # 11 - Goto 11 to make infinite loop
 ```
+
+### Example 3. Ticker
+
+A program that switches sequentially the lamps in the output register
+
+```
+'PUT 1 1',      # 0 - Initial state (start from 00000001)
+'ADC 2 2',      # 1 - Add the number to itself with carry
+'MOV 16 2',     # 2 - Copy to register 16 (digital output)
+'JMP 1'         # 3 - Jump to 1 to make infinite loop
+```
+
+Demo on YouTube:
+
+[![Comparing two numbers in Minecraft using PRRC](https://img.youtube.com/vi/-WHM7oyI7bc/0.jpg)](https://www.youtube.com/watch?v=-WHM7oyI7bc)
