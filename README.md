@@ -169,4 +169,4 @@ A program that switches sequentially the lamps in the output register
 
 Demo on YouTube:
 
-[![Comparing two numbers in Minecraft using PRRC](https://img.youtube.com/vi/-WHM7oyI7bc/0.jpg)](https://www.youtube.com/watch?v=-WHM7oyI7bc)
+[![8-bit ticker in Minecraft using redstone computer (timelapse)](https://img.youtube.com/vi/-WHM7oyI7bc/0.jpg)](https://www.youtube.com/watch?v=-WHM7oyI7bc)
