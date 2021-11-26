@@ -17,6 +17,14 @@
 
 - [What is it?](#what-is-it)
 - [How to use it](#how-to-use-it)
+  - [Flash memory](#flash-memory)
+  - [Program counter](#program-counter)
+  - [RAM (Registers 1-15 and 17-30)](#ram-registers-1-15-and-17-30)
+  - [Digital inputs/outputs (Registers 16 and 31)](#digital-inputsoutputs-registers-16-and-31)
+  - [NULL register (Register 0)](#null-register-register-0)
+  - [ALU (Arithmetic Logic Unit)](#alu-arithmetic-logic-unit)
+  - [Reset](#reset)
+  - [Clock](#clock)
 - [Program flasher](#program-flasher)
 
 ----------
