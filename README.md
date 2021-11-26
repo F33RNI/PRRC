@@ -16,8 +16,8 @@
 ## Table of contents
 
 - [What is it?](#what-is-it)
-- [Program flasher](#program-flasher)
 - [How to use it](#how-to-use-it)
+- [Program flasher](#program-flasher)
 
 ----------
 
@@ -44,12 +44,61 @@ Comparing two numbers in Minecraft using PRRC (YouTube):
 
 ----------
 
-## Program flasher
+## How to use it
 
-coming soon...
+### Flash memory
+
+The program writes in assembly language. Each command consists of 19 bits
+- 3 bits of instruction
+  - 0 (0x000) - PUT Rd N  - Write 8-bit number N to the register with 8-bit address Rd
+  - 1 (0x001) - MOV Rd Rs - Copy number from register Rs to register Rd
+  - 2 (0x010) - JMP Addr. - Jump to the 8-bit Addr. address
+  - 3 (0x011) - BRC Addr. - Jump to the 8-bit Addr. address if carry bit is set
+  - 4 (0x100) - NOR Rd Rs - Logic NOR operation between Rd and Rs. The result will be written to Rd
+  - 5 (0x101) - AND Rd Rs - Logic AND operation between Rd and Rs. The result will be written to Rd
+  - 6 (0x110) - ADD Rd Rs - Arithmetic addition of Rd to Rs without carry bit. The result will be written to Rd
+  - 7 (0x111) - ADC Rd Rs - Arithmetic addition of Rd to Rs with carry bit. The result will be written to Rd
+- 8 bits (1 byte) of first argument. By default connected to the RAM address bus. Can be connected to Program counter register (in JMP or BRC instructions)
+- 8 bits (1 byte) of second argument. Can be connected to the data bus or RAM address bus
+
+### Program counter
+
+A register that stores the current instruction address for program memory. After executing commands 0 to 1 and 4 to 7, it adds 1 to the address. The address can be manually assigned using JMP (2) or BRC (3) commands. If no carriage has been set when the BRC command is executed, the current address will be incremented without assignment
+
+### RAM (Registers 1-15 and 17-30)
+
+29 bytes of RAM (registers) are available for program execution.
+Register 1 also used for Carry bit. If a carriage return was performed while performing the addition, it will be written as the last bit in the register 1 (0b00000001). When writing, the remaining bits of the register are not affected
+
+### Digital inputs/outputs (Registers 16 and 31)
+
+In the current version of the computer, 2 registers are available as input / output ports (Register 16 (0b00010000) and register 31 (0b00011111)). Each of the two registers has 8 external inputs and 8 external outputs. To read / write digital ports, the same functions are used as for regular registers
+
+For example, to turn on the lamp on the least significant bit of register 31, just execute command `PUT 31 1`
+
+Reading from this registry copies the data from the levers
+
+### NULL register (Register 0)
+
+0 address does not exist and this register cannot be accessed. The 0th register is used exclusively as a buffer when copying from one register to another
+
+### ALU (Arithmetic Logic Unit)
+
+ALU is the heart of the computer. It performs logical and arithmetic operations. The current version supports 3 operations that ALU performs:
+- NOR. Logic NOR operation (Not-OR)
+- AND. Logic AND operation
+- ADD (ADC). Arithmetic addition
+
+### Reset
+
+After setting the reset, the entire computer stops, the contents of the RAM and the instruction decoder are cleared, the 0th address of the program memory is set
+
+### Clock
+
+The current version of PRRC uses 0.2 Hz redtone clock. You can slow it down without any problem, but speeding up can cause problems due to slow redstone transmission
 
 ----------
 
-## How to use it
+## Program flasher
 
 coming soon...
