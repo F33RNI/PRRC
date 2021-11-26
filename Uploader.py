@@ -72,10 +72,10 @@ INSTRUCTIONS = ['PUT 2 1',      # 0 - 1 (0b00000001) constant
 
 """
 # A program that switches sequentially the lamps in the output register
-INSTRUCTIONS = ['PUT 1 1',
-                'ADC 2 2',
-                'MOV 16 2',
-                'JMP 1'
+INSTRUCTIONS = ['PUT 1 1',      # 0 - Initial state (start from 00000001)
+                'ADC 2 2',      # 1 - Add the number to itself with carry
+                'MOV 16 2',     # 2 - Copy to register 16 (digital output)
+                'JMP 1'         # 3 - Jump to 1 to make infinite loop
                 ]
 """
 
