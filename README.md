@@ -46,13 +46,15 @@ Some specs:
 
 <p align="center">
     <img src="SCREENSHOT.png" >
-    <br >
-    <img src="STRUCTURE.png" >
 </p>
 
 ----------
 
 ## How to use it
+
+<p align="center">
+    <img src="STRUCTURE.png" >
+</p>
 
 ### Flash memory
 
