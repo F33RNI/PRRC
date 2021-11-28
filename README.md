@@ -17,6 +17,7 @@
 ## Table of contents
 
 - [What is it?](#what-is-it)
+- [Download map](#download-map)
 - [How to use it](#how-to-use-it)
   - [Flash memory](#flash-memory)
   - [Program counter](#program-counter)
@@ -47,6 +48,14 @@ Some specs:
 <p align="center">
     <img src="SCREENSHOT.png" >
 </p>
+
+----------
+
+## Download map
+
+You can download the latest version of the map in the releases tab
+
+https://github.com/XxOinvizioNxX/PRRC/releases
 
 ----------
 
